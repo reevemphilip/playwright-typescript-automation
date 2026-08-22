@@ -16,6 +16,10 @@ A beginner QA automation portfolio project built with Playwright and TypeScript.
 - Node.js
 - Github Actions
 
+## Test design
+
+This project uses the Page Object Model (POM). Reusable website actions and locators live in `pages/todo.page.ts`, keeping each test focused on user behavior and expected results.
+
 ## Run the tests
 
 ```bash
