@@ -7,6 +7,7 @@ A beginner QA automation portfolio project built with Playwright and TypeScript.
 
 - A user can add a to-do item.
 - A User can mark a to-do item as complete.
+- A user can view completed to-do items using the Completed filter.
 
 ## Technology
 
