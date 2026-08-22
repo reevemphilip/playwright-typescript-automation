@@ -1,4 +1,5 @@
 # Playwright Typescript QA Automation Portfolio
+[![Playwright Tests](https://github.com/reevemphilip/playwright-typescript-automation/actions/workflows/playwright.yml/badge.svg?branch=master)](https://github.com/reevemphilip/playwright-typescript-automation/actions/workflows/playwright.yml)
 
 A beginner QA automation portfolio project built with Playwright and TypeScript.
 
