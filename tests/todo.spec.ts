@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 
-test('user an add a todo item', async ({ page }) => {
+test('user can add a todo item', async ({ page }) => {
     await page.goto('https://demo.playwright.dev/todomvc/');
 
     const newTodo = page.getByPlaceholder("What needs to be done?");
