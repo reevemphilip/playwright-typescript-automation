@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { TodoPage } from '../pages/todo.page';
 
+test.describe('Todo List', () => {
 test('user can add a todo item', async ({ page }) => {
   const todoPage = new TodoPage(page);
 
@@ -30,3 +31,4 @@ test('user can view completed todo items', async ({ page }) => {
 
   await expect(todoPage.getTodoItem('Learn Playwright')).toBeVisible();
 });
+})
