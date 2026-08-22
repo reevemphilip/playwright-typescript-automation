@@ -27,3 +27,19 @@ test('user can complete a todo item', async ({ page }) => {
 
   await expect(todoItem).toHaveClass(/completed/);
 });
+
+test('user can view completed todo items', async ({ page }) => {
+  await page.goto('https://demo.playwright.dev/todomvc/');
+
+  const newTodo = page.getByPlaceholder('What needs to be done?');
+
+  await newTodo.fill('Learn Playwright');
+  await newTodo.press('Enter');
+
+  const todoItem = page.getByTestId('todo-item');
+
+  await todoItem.getByRole('checkbox').check();
+  await page.getByRole('link', { name: 'Completed' }).click();
+
+  await expect(todoItem).toBeVisible();
+});
