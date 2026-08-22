@@ -1,45 +1,32 @@
-import {test, expect} from '@playwright/test';
+import { test, expect } from '@playwright/test';
+import { TodoPage } from '../pages/todo.page';
 
 test('user can add a todo item', async ({ page }) => {
-    await page.goto('https://demo.playwright.dev/todomvc/');
+  const todoPage = new TodoPage(page);
 
-    const newTodo = page.getByPlaceholder("What needs to be done?");
+  await todoPage.goto();
+  await todoPage.addTodo('Learn Playwright');
 
-    await newTodo.fill('Learn Playwright');
-
-    await newTodo.press('Enter');
-
-    await expect(page.getByTestId('todo-item')).toContainText('Learn Playwright')
-
+  await expect(todoPage.getTodoItem('Learn Playwright')).toContainText('Learn Playwright');
 });
 
 test('user can complete a todo item', async ({ page }) => {
-  await page.goto('https://demo.playwright.dev/todomvc/');
+  const todoPage = new TodoPage(page);
 
-  const newTodo = page.getByPlaceholder('What needs to be done?');
+  await todoPage.goto();
+  await todoPage.addTodo('Learn Playwright');
+  await todoPage.completeTodo('Learn Playwright');
 
-  await newTodo.fill('Learn Playwright');
-  await newTodo.press('Enter');
-
-  const todoItem = page.getByTestId('todo-item');
-
-  await todoItem.getByRole('checkbox').check();
-
-  await expect(todoItem).toHaveClass(/completed/);
+  await expect(todoPage.getTodoItem('Learn Playwright')).toHaveClass(/completed/);
 });
 
 test('user can view completed todo items', async ({ page }) => {
-  await page.goto('https://demo.playwright.dev/todomvc/');
+  const todoPage = new TodoPage(page);
 
-  const newTodo = page.getByPlaceholder('What needs to be done?');
+  await todoPage.goto();
+  await todoPage.addTodo('Learn Playwright');
+  await todoPage.completeTodo('Learn Playwright');
+  await todoPage.showCompletedTodos();
 
-  await newTodo.fill('Learn Playwright');
-  await newTodo.press('Enter');
-
-  const todoItem = page.getByTestId('todo-item');
-
-  await todoItem.getByRole('checkbox').check();
-  await page.getByRole('link', { name: 'Completed' }).click();
-
-  await expect(todoItem).toBeVisible();
+  await expect(todoPage.getTodoItem('Learn Playwright')).toBeVisible();
 });
