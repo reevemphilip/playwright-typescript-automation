@@ -21,6 +21,19 @@ test('user can complete a todo item', async ({ page }) => {
   await expect(todoPage.getTodoItem('Learn Playwright')).toHaveClass(/completed/);
 });
 
+test('user can view active todo items', async({ page }) => {
+    const todoPage = new TodoPage(page);
+
+    await todoPage.goto();
+    await todoPage.addTodo('Learn Playwright');
+    await todoPage.addTodo('Practice selectors');
+    await todoPage.completeTodo('Learn Playwright');
+    await todoPage.showActiiveTodos();
+
+    await expect(todoPage.getTodoItem('Practice selectors')).toBeVisible();
+    await expect(todoPage.getTodoItem('Learn Playwright')).not.toBeVisible();
+});
+
 test('user can view completed todo items', async ({ page }) => {
   const todoPage = new TodoPage(page);
 

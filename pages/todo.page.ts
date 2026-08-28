@@ -31,4 +31,8 @@ export class TodoPage {
   async showCompletedTodos() {
     await this.page.getByRole('link', { name: 'Completed' }).click();
   }
+
+  async showActiiveTodos() {
+    await this.page.getByRole('link', { name: 'Active' }).click();
+  }
 }
