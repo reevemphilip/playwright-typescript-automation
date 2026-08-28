@@ -24,3 +24,7 @@ This project uses the Page Object Model (POM). Reusable website actions and loca
 
 ```bash
 npx playwright test
+```
+
+## QA documentation
+- [TodoMVC test plan](docs/test-plan.md)
