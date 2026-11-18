@@ -11,6 +11,8 @@ This automation suite covers:
 - Adding a to-do item
 - Marking a to-do item as complete
 - Viewing completed to-do items
+- Viewing active to-do items
+- Clearing completed to-do items
 
 ## Browsers
 
