@@ -36,7 +36,7 @@ export class TodoPage {
     await this.page.getByRole('link', { name: 'Active' }).click();
   }
 
-  async clearCompletedtodos() {
+  async clearCompletedTodos() {
     await this.page.getByRole('button', {name: 'Clear completed'}).click();
   }
 }

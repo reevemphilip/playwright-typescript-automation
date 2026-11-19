@@ -51,8 +51,22 @@ test('@smoke user can clear completed todo items', async ({ page }) => {
   await todoPage.goto();
   await todoPage.addTodo('Learn Playwright');
   await todoPage.completeTodo('Learn Playwright');
-  await todoPage.clearCompletedtodos();
+  await todoPage.clearCompletedTodos();
 
   await expect(todoPage.getTodoItem('Learn Playwright')).toHaveCount(0);
-})
-})
+});
+
+test('user sees the number of active todo items', async ({ page }) => {
+  const todoPage = new TodoPage(page);
+
+  await todoPage.goto();
+  await todoPage.addTodo('Learn Playwright');
+  await todoPage.addTodo('Practice selectors');
+
+  await expect(todoPage.page.getByText('2 items left')).toBeVisible();
+
+  await todoPage.completeTodo('Learn Playwright');
+
+  await expect(todoPage.page.getByText('1 item left')).toBeVisible();
+});
+});
