@@ -1,4 +1,4 @@
-# Playwright Typescript QA Automation Portfolio
+# Playwright TypeScript QA Automation Portfolio
 
 [![Playwright Tests](https://github.com/reevemphilip/playwright-typescript-automation/actions/workflows/playwright.yml/badge.svg?branch=master)](https://github.com/reevemphilip/playwright-typescript-automation/actions/workflows/playwright.yml)
 
@@ -17,9 +17,9 @@ A beginner QA automation portfolio project built with Playwright and TypeScript.
 ## Technology
 
 - Playwright
-- Typescript
+- TypeScript
 - Node.js
-- Github Actions
+- GitHub Actions
 
 ## Test design
 
@@ -35,6 +35,18 @@ npx playwright test
 
 ```bash
 npx playwright test -g "@smoke"
+```
+
+## Format the project
+
+```bash
+npm run format
+```
+
+Check formatting without changing files:
+
+```bash
+npm run format:check
 ```
 
 ## QA documentation
