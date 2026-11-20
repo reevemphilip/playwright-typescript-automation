@@ -11,6 +11,7 @@ A beginner QA automation portfolio project built with Playwright and TypeScript.
 - A user can view active to-do items using the Active filter.
 - A user can clear completed to-do items.
 - A user can see the number of active to-do items.
+- A user can edit a to-do item.
 
 ## Technology
 
