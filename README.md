@@ -49,6 +49,12 @@ Check formatting without changing files:
 npm run format:check
 ```
 
+## Type-check the project
+
+```bash
+npm run typecheck
+```
+
 ## QA documentation
 
 - [TodoMVC test plan](docs/test-plan.md)
