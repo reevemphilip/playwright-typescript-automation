@@ -69,4 +69,14 @@ test('user sees the number of active todo items', async ({ page }) => {
 
   await expect(todoPage.page.getByText('1 item left')).toBeVisible();
 });
+
+test('user can edit a todo item', async ({ page }) => {
+  const todoPage = new TodoPage(page);
+
+  await todoPage.goto();
+  await todoPage.addTodo('Learn Playwright');
+  await todoPage.editTodo('Learn Playwright', 'Practice Playwright');
+
+  await expect(todoPage.getTodoItem('Practice Playwright')).toBeVisible();
+});
 });

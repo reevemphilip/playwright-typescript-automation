@@ -39,4 +39,15 @@ export class TodoPage {
   async clearCompletedTodos() {
     await this.page.getByRole('button', {name: 'Clear completed'}).click();
   }
+
+  async editTodo(todoText: string, newTodoText: string) {
+  const todoItem = this.getTodoItem(todoText);
+
+  await todoItem.locator('label').dblclick();
+
+  const editInput = todoItem.locator('.edit');
+
+  await editInput.fill(newTodoText);
+  await editInput.press('Enter');
+  }
 }
