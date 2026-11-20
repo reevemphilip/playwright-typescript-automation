@@ -13,6 +13,7 @@ This automation suite covers:
 - Viewing completed to-do items
 - Viewing active to-do items
 - Clearing completed to-do items
+- Displaying the number of active to-do items
 
 ## Browsers
 
