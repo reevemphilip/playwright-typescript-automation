@@ -24,7 +24,9 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: npx playwright test
+        env:
+          BASE_URL: https://demo.playwright.dev/todomvc/
+        run: npm test
       - uses: actions/upload-artifact@v6
         if: ${{ !cancelled() }}
         with:
