@@ -55,6 +55,12 @@ npm run format:check
 npm run typecheck
 ```
 
+## Lint the project
+
+```bash
+npm run lint
+```
+
 ## QA documentation
 
 - [TodoMVC test plan](docs/test-plan.md)
