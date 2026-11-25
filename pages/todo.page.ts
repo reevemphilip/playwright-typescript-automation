@@ -50,4 +50,11 @@ export class TodoPage {
     await editInput.fill(newTodoText);
     await editInput.press('Enter');
   }
+
+  async deleteTodo(todoText: string) {
+    const todoItem = this.getTodoItem(todoText);
+
+    await todoItem.hover();
+    await todoItem.locator('.destroy').click();
+  }
 }

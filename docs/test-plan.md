@@ -9,6 +9,7 @@ Verify that users can manage to-do items in the TodoMVC application.
 This automation suite covers:
 
 - Adding a to-do item
+- Deleting a to-do item
 - Marking a to-do item as complete
 - Viewing completed to-do items
 - Viewing active to-do items

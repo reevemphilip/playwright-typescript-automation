@@ -61,4 +61,11 @@ test.describe('Todo List', () => {
 
     await expect(todoPage.getTodoItem('Practice Playwright')).toBeVisible();
   });
+
+  test('user can delete a todo item', async ({ todoPage }) => {
+    await todoPage.addTodo('Learn Playwright');
+    await todoPage.deleteTodo('Learn Playwright');
+
+    await expect(todoPage.getTodoItem('Learn Playwright')).toHaveCount(0);
+  });
 });
