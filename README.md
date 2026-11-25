@@ -25,6 +25,8 @@ A beginner QA automation portfolio project built with Playwright and TypeScript.
 
 This project uses the Page Object Model (POM). Reusable website actions and locators live in `pages/todo.page.ts`, keeping each test focused on user behavior and expected results.
 
+Shared setup lives in `fixtures/todo.fixture.ts`, which provides a ready-to-use `TodoPage` for every test.
+
 ## Run the tests
 
 ```bash
