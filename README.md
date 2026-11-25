@@ -31,13 +31,13 @@ Shared setup lives in `fixtures/todo.fixture.ts`, which provides a ready-to-use 
 ## Run the tests
 
 ```bash
-npx playwright test
+npm test
 ```
 
 ## Run smoke tests
 
 ```bash
-npx playwright test -g "@smoke"
+npm run test:smoke
 ```
 
 ## Format the project
