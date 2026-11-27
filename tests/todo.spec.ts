@@ -48,11 +48,11 @@ test.describe('Todo List', () => {
     await todoPage.addTodo('Learn Playwright');
     await todoPage.addTodo('Practice selectors');
 
-    await expect(todoPage.page.getByText('2 items left')).toBeVisible();
+    await expect(todoPage.activeTodoCount).toHaveText('2 items left');
 
     await todoPage.completeTodo('Learn Playwright');
 
-    await expect(todoPage.page.getByText('1 item left')).toBeVisible();
+    await expect(todoPage.activeTodoCount).toHaveText('1 item left');
   });
 
   test('user can edit a todo item', async ({ todoPage }) => {

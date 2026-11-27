@@ -4,11 +4,13 @@ export class TodoPage {
   readonly page: Page;
   readonly newTodo: Locator;
   readonly todoItems: Locator;
+  readonly activeTodoCount: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.newTodo = page.getByPlaceholder('What needs to be done?');
     this.todoItems = page.getByTestId('todo-item');
+    this.activeTodoCount = page.getByTestId('todo-count');
   }
 
   async goto() {
