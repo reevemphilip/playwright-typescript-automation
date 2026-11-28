@@ -47,7 +47,7 @@ export class TodoPage {
 
     await todoItem.locator('label').dblclick();
 
-    const editInput = todoItem.locator('.edit');
+    const editInput = todoItem.getByRole('textbox', { name: 'Edit' });
 
     await editInput.fill(newTodoText);
     await editInput.press('Enter');
@@ -57,6 +57,6 @@ export class TodoPage {
     const todoItem = this.getTodoItem(todoText);
 
     await todoItem.hover();
-    await todoItem.locator('.destroy').click();
+    await todoItem.getByRole('button', { name: 'Delete' }).click();
   }
 }
