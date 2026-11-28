@@ -30,10 +30,12 @@ test.describe('Todo List', () => {
 
   test('user can view completed todo items', async ({ todoPage }) => {
     await todoPage.addTodo('Learn Playwright');
+    await todoPage.addTodo('Practice selectors');
     await todoPage.completeTodo('Learn Playwright');
     await todoPage.showCompletedTodos();
 
     await expect(todoPage.getTodoItem('Learn Playwright')).toBeVisible();
+    await expect(todoPage.getTodoItem('Practice selectors')).not.toBeVisible();
   });
 
   test('@smoke user can clear completed todo items', async ({ todoPage }) => {
