@@ -45,7 +45,7 @@ export class TodoPage {
   async editTodo(todoText: string, newTodoText: string) {
     const todoItem = this.getTodoItem(todoText);
 
-    await todoItem.locator('label').dblclick();
+    await todoItem.getByTestId('todo-title').dblclick();
 
     const editInput = todoItem.getByRole('textbox', { name: 'Edit' });
 
